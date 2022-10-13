@@ -33,9 +33,7 @@ class Api::V1::BooksController < ApplicationController
   def destroy
     @delete_book = Book.find_by_id(params[:id])
 
-    if !@delete_book.destroy
-      render json: { error: @delete_book.errors.messages }, status: 422
-    end
+    render json: { error: @delete_book.errors.messages }, status: 422 unless @delete_book.destroy
   end
 
   private
