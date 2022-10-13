@@ -4,13 +4,24 @@ class Api::V1::CommentsController < ApplicationController
     render json: { data: @comments }, status: :ok
   end
 
-  def show; end
+  def show
+    @comment = Comment.find_by_id(params[:id])
+    render json: { data: @comment }, status: :ok
+  end
 
-  def new; end
+  def create
+    @new_comment = Comment.new(comment_params)
 
-  def create; end
+    if @new_comment.save
+      render json: { data: @new_comment }, status: :ok
+    else
+      render json: { error: @new_comment.errors.messages }, status: 422
+    end
+  end
 
-  def destroy; end
+  private
 
-  def comment_params; end
+  def comment_params
+    params.require(:comment).permit(:text, :book_id)
+  end
 end
