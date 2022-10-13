@@ -15,7 +15,7 @@ class Api::V1::CommentsController < ApplicationController
     if @new_comment.save
       render json: { data: @new_comment }, status: :ok
     else
-      render json: {error: @new_comment.errors.messages }, status: 422
+      render json: { error: @new_comment.errors.messages }, status: 422
     end
   end
 
