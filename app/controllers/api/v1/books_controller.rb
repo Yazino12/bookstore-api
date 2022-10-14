@@ -2,7 +2,6 @@ class Api::V1::BooksController < ApplicationController
   def index
     @books = Book.all
     render json: { data: @books }, status: :ok
-    # render json: BookSerializer.new(@books), adapter: :json
   end
 
   def show
