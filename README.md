@@ -12,7 +12,7 @@
 - Rspec (last version)
 - Rubocop (last version)
 - Devise (last version)
-- cloudinary (last version)
+- HTTP cookies
 
 ## Getting Started
 
