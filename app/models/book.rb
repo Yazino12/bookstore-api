@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   validates :title, presence: true, length: { in: 1..30 }
   validates :chapters, presence: true, numericality: { only_integer: true }
