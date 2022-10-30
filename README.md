@@ -2,7 +2,7 @@
 
 # App Name
 
-> This repo is a Rails API for a simple web app which allows users to add, edit and remove books from their booklist, for Bookstore app that is built using React, Redux and Javascript libraries.
+> Rails API for a simple web app which allows users to add, edit and remove books from their booklist, for Bookstore app that is built using React, Redux and Javascript libraries.
 
 ## Built With
 
